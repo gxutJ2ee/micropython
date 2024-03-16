@@ -55,3 +55,9 @@ jobs:
 
     - name: Build ci_${{matrix.ci_func }}
       run: source tools/ci.sh && ci_${{ matrix.ci_func }}
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: esp32
+        path: /home/runner/work/micropython/micropython/ports/esp32/build-GENERIC_S2/
